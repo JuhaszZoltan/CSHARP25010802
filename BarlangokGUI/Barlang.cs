@@ -1,4 +1,4 @@
-﻿namespace BarlangokCLI;
+﻿namespace BarlangokGUI;
 
 internal class Barlang
 {

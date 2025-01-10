@@ -1,7 +1,8 @@
 ﻿using BarlangokCLI;
 using System.Text;
 
-const string SOLDIR = "E:\\juhaszz\\PROJECTS\\CSHARP25010802\\SRC";
+const string SOLDIR = 
+    "C:\\Users\\juhaszz\\Source\\Repos\\CSHARP25010802\\SRC";
 
 List<Barlang> barlangok = [];
 
