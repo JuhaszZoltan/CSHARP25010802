@@ -109,11 +109,11 @@
             // lblBarlangNeve
             // 
             lblBarlangNeve.AutoSize = true;
+            lblBarlangNeve.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblBarlangNeve.Location = new Point(219, 111);
             lblBarlangNeve.Name = "lblBarlangNeve";
-            lblBarlangNeve.Size = new Size(122, 25);
+            lblBarlangNeve.Size = new Size(0, 25);
             lblBarlangNeve.TabIndex = 0;
-            lblBarlangNeve.Text = "##########";
             // 
             // btnMentes
             // 

@@ -4,7 +4,7 @@ namespace BarlangokGUI
 {
     public partial class BarlangokForm : Form
     {
-        private const string SOLDIR = "C:\\Users\\juhaszz\\Source\\Repos\\CSHARP25010802\\SRC";
+        private const string SOLDIR = "C:\\Users\\juhaszz\\source\\repos\\CSHARP25010802\\SRC";
 
         List<Barlang> barlangok = [];
         Barlang kijBarlang = null;
@@ -14,6 +14,28 @@ namespace BarlangokGUI
             InitializeComponent();
             this.Load += BarlangokFormLoad;
             btnKereses.Click += BtnKeresesClick;
+            btnMentes.Click += BtnMentesClick;
+        }
+
+        private void BtnMentesClick(object sender, EventArgs e)
+        {
+            string msg = string.Empty;
+
+            if (kijBarlang.Hossz > int.Parse(tbHosszusag.Text))
+                msg += "A hossz nem lehet kissebb a korábbi értéknél!\n";
+            if (kijBarlang.Melyseg > int.Parse(tbMelyseg.Text))
+                msg += "A mélység nem lehet kisebb a korábbi értéknél!\n";
+
+            if (msg != string.Empty)
+            {
+                _ = MessageBox.Show(msg);
+            }
+            else
+            {
+                kijBarlang.Hossz = int.Parse(tbHosszusag.Text);
+                kijBarlang.Melyseg = int.Parse(tbMelyseg.Text);
+            }
+            EredetiAllapot();
         }
 
         private void BtnKeresesClick(object sender, EventArgs e)
@@ -31,6 +53,7 @@ namespace BarlangokGUI
                 lblBarlangNeve.Text = kijBarlang.Nev;
                 tbHosszusag.Text = $"{kijBarlang.Hossz}";
                 tbMelyseg.Text = $"{kijBarlang.Melyseg}";
+                btnMentes.Enabled = true;
             }
         }
 
